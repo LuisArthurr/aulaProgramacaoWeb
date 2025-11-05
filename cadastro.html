@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">&#128153; Adoção</div>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul id="navMenu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="projeto.html">Projeto</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero hero-cadastro">
+        <div class="hero-content">
+            <h1>Cadastre-se para adotar &#x1F43E;</h1>
+            <p>O melhor amigo que você pode ter está esperando por você agora</p>
+        </div>
+    </section>
+
+    <!-- Formulário de Cadastro -->
+    <main>
+        <section class="signup-section">
+            <h2>Formulário de Cadastro para Adoção</h2>
+         <div class="sucess-message" id="sucessMessage">
+                ✅ Cadastro realizado com sucesso! Entraremos em contato em breve.
+         </div> 
+            <form id="volunteerForm" onsubmit="handleSubmit(event)">
+                <fieldset>
+                  <legend>Dados Pessoais</legend>
+                   <div class="form-group"> 
+                      <label for="nome">Nome Completo *</label>
+                      <input type="text" id="nome" name="nome" required>
+                   </div>
+                   <div class="form-group">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone *</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="idade">Idade *</label>
+                        <input type="number" id="idade" name="idade" min="18" max="100" required>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Animal</legend>
+                    <div class="form-group">
+                        <label for="especie">Espécie *</label>
+                        <select id="especie" name="especie" required>
+                            <option value="">Selecione...</option>
+                            <option value="gato">Gato</option>
+                            <option value="cachorro">Cachorro</option>
+                    </div>
+                    <div class="form-group">
+                        <label for="sexo">Sexo *</label>
+                        <select id="sexo" name="sexo" required>
+                            <option value="">Selecione...</option>
+                            <option value="macho">Macho</option>
+                            <option value="femea">Fêmea</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Informações Adicionais</legend>
+                    <div class="form-group">
+                        <label for="experiencia">Por que você pretende adotar um bichinho?</label>
+                        <textarea id="experiencia" name="experiencia" placeholder="Conte-nos sobre sua experiência..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="motivacao">Por que você quer ser um adotante?</label>
+                        <textarea id="motivacao" name="motivacao" placeholder="Compartilhe sua motivação..."></textarea>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="btn-primary">Enviar Cadastro</button>
+            </form>
+
+            <section class="adotantes-lista">
+                <h2>Adotantes Cadastrados</h2>
+                <div id="tabelaAdotantes">                   
+                </div>
+                <button onclick="limparTabela()">Limpar Tabela</button>
+            </section>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Instituição Aliança Pet. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
